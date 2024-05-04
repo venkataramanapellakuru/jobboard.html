@@ -4,11 +4,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Job Board</title>
+<style>
+  /* Basic CSS styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9ecef; /* New background color */
+  }
+  .container {
+    max-width: 1200px; /* Increased max-width */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White background for the content */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Drop shadow effect */
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .logo {
+    font-size: 36px;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #FF5733, #FFC300, #DAF7A6, #3D5A80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .search-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin-right: 20px;
+    max-width: 300px;
+  }
+  .filter {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .filter:hover {
+    background-color: #f0f0f0; /* Lighter color on hover */
+  }
+  .job {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .job:hover {
+    background-color: #f9f9f9; /* Light gray background on hover */
+  }
+  .company {
+    color: #007bff; /* Blue color for company names */
+    font-weight: bold;
+  }
+  .description {
+    color: #6c757d; /* Gray color for descriptions */
+    font-style: italic;
+  }
+
+  /* Button styling */
+  .search-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  /* Filter button colors */
+  #filterSelect {
+    background-color: #ffc107; /* Yellow background color */
+    color: #333; /* Text color */
+  }
+
+  #experienceSelect {
+    background-color: #28a745; /* Green background color */
+    color: #fff; /* White text color */
+  }
+
+  #remoteSelect {
+    background-color: #dc3545; /* Red background color */
+    color: #fff; /* White text color */
+  }
+
+  /* Responsive CSS */
+  @media screen and (max-width: 600px) {
+    .header {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .search-box {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .filter {
+      margin-top: 10px;
+      margin-right: 0;
+    }
+  }
+</style>
 </head>
 <body>
-<style>
-  /* CSS styles here */
-</style>
 <div class="container">
   <div class="header">
     <div class="logo">NeedHunt</div>
@@ -35,20 +145,9 @@
     </div>
   </div>
   <div id="jobList"></div>
-
-  <!-- Query section -->
-  <div class="query-section">
-    <h2>Have a query?</h2>
-    <form class="query-form">
-      <input type="text" placeholder="Name" name="name" required><br>
-      <input type="email" placeholder="Email" name="email" required><br>
-      <input type="tel" placeholder="Phone Number" name="phone" required><br>
-      <textarea placeholder="Your Message" name="message" rows="4" required></textarea><br>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
 </div>
 <script>
+  // Sample job data
   const jobs = [
     { title: 'Frontend Developer', company: 'ABC Inc.', location: 'New York', category: 'frontend', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', experience: 'intermediate', remote: false },
     { title: 'Backend Developer', company: 'XYZ Corp.', location: 'San Francisco', category: 'backend', description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.', experience: 'senior', remote: true },
@@ -106,3 +205,5 @@
 </script>
 </body>
 </html>
+
+  
